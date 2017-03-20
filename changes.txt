@@ -3,6 +3,10 @@ Project 2: Neural Networks for Indentifying Handwritten Digits
 Student1: Mohammed Ibrahim
 Student2: Oluwatobi Oni-Orisan
 
+
+===========PART 2==================
+
+===========PART 3==================
 Observations:
     - Learning Rate: 0.002
         - Number of Tests: 5000
@@ -25,3 +29,16 @@ Observations:
     - Learning Rate: 20.0
         -Number of Tests  5000
         -Total probable errors  1667
+===========PART 4==================
+Observations:
+    - Learning Rate: 0.002
+    - Learning Rate: 0.01
+    - Learning Rate: 0.05
+    - Learning Rate: 0.2
+    - Learning Rate: 1.0
+    - Learning Rate: 5.0
+    - Learning Rate: 20.0
+
+
+
+
