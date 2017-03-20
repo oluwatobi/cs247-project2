@@ -32,9 +32,17 @@ Observations:
 ===========PART 4==================
 Observations:
     - Learning Rate: 0.002
+        - Number of Tests: 5000
+        - Total Probable Errors: 5000
     - Learning Rate: 0.01
+        - Number of Tests: 5000
+        - Total Probable Errors: 4878
     - Learning Rate: 0.05
+        - Number of Tests: 5000
+        - Total Probable Errors: 4227
     - Learning Rate: 0.2
+        - Number of Tests: 5000
+        - Total Probable Errors: 2716
     - Learning Rate: 1.0
     - Learning Rate: 5.0
     - Learning Rate: 20.0
