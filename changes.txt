@@ -20,8 +20,8 @@ Observations:
         - Number of Tests: 5000
         - Total probable errors: 3518
     - Learning Rate: 5.0
-        - Number of Tests
-        - Total probable errors
+        -Number of Tests  5000
+        -Total probable errors  1960  
     - Learning Rate: 20.0
-        - Number of Tests
-        - Total probable errors
+        -Number of Tests  5000
+        -Total probable errors  1667
