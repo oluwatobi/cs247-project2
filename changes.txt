@@ -1,0 +1,6 @@
+Project 2: Neural Networks for Indentifying Handwritten Digits
+
+Student1: Mohammed Ibrahim
+Student2: Oluwatobi Oni-Orisan
+
+
