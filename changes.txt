@@ -7,6 +7,7 @@ Student2: Oluwatobi Oni-Orisan
 ===========PART 2==================
 
 ===========PART 3==================
+
 Observations:
     - Learning Rate: 0.002
         - Number of Tests: 5000
@@ -29,7 +30,10 @@ Observations:
     - Learning Rate: 20.0
         -Number of Tests  5000
         -Total probable errors  1667
+
+
 ===========PART 4==================
+
 Observations:
     - Learning Rate: 0.002
         - Number of Tests: 5000
@@ -44,8 +48,14 @@ Observations:
         - Number of Tests: 5000
         - Total Probable Errors: 2716
     - Learning Rate: 1.0
+        - Number of Tests: 5000
+        - Total Probable Errors: 1427
     - Learning Rate: 5.0
+        - Number of Tests: 5000
+        - Total Probable Errors: 2602
     - Learning Rate: 20.0
+        - Number of Tests: 5000
+        - Total Probable Errors: 4618
 
 
 
