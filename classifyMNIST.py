@@ -3,17 +3,16 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 import sys
 
+
+
 from tensorflow.examples.tutorials.mnist import input_data
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
-
 
 print 'Testing   Set count ', mnist.train.images.shape
 print 'Training   Set count ', mnist.test.images.shape
 print 'Validation Set count ', mnist.validation.images.shape
 
-
 #the length of each input is determined by the data file
-
 
 training_size = 1000
 epochs = 10000
@@ -23,7 +22,8 @@ batch_size = 10
 # default hyperparameters
 
 hiddenLayerSize = 10
-learning_rate = 0.002
+learning_rate = 1.0
+momentum = 0.9
 
 print sys.argv
 
@@ -45,6 +45,7 @@ for o in range(1,len(sys.argv),2):
 points = mnist.test.images[:training_size,:]
 pointsA = mnist.test.labels[:training_size,:]
 
+
 validation = mnist.validation.images
 validationA = mnist.validation.labels
 
@@ -58,12 +59,12 @@ print "learning rate     ", learning_rate
 print "training size     ", len(points)
 print "validation size   ", len(validation)
 
+
 def display_digit(X):
     image = X.reshape([28,28])
     plt.imshow(image, cmap=plt.get_cmap('gray_r'))
     plt.show()
     
-
 # some number of inputs, each of which is the size of the input layer
 
 x = tf.placeholder(dtype=tf.float32, shape=[None, inputLayerSize], name="inputData")
@@ -79,7 +80,14 @@ biasesOut = tf.Variable(tf.zeros([outputLayerSize]), name='biasesOut')
 decoded = tf.nn.sigmoid(tf.matmul(encoded, weightsHidOut) + biasesOut)
 
 loss = (tf.reduce_mean(tf.square(tf.sub(y, decoded))))
-train_op = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss)
+lambdaConstant = 0.000005
+
+l2reg = tf.reduce_sum(tf.square(weightsInHid)) + tf.reduce_sum(tf.square(weightsHidOut))
+print "==================================="
+
+loss = loss + (lambdaConstant* l2reg)
+train_op = tf.train.MomentumOptimizer(learning_rate,momentum).minimize(loss)
+
 
 
 num_samples = len(points)
@@ -94,7 +102,8 @@ sess.run(init)
 
 test_writer = tf.summary.FileWriter('./test', sess.graph)
 
-def checkErrors(ins,outs,flag=True):
+
+def checkErrors(ins,outs,flag=False):
     errors = 0
     print "Number of Tests ",len(ins)
     for k in range(len(ins)):
@@ -121,7 +130,8 @@ def checkErrors(ins,outs,flag=True):
             print outs[k]
             
     print "Total probable errors ", errors
-    
+
+
 
 for i in range(epochs):
     trainPoints = []
@@ -150,6 +160,7 @@ for i in range(epochs):
 
 checkErrors(points,pointsA)
 
-checkErrors(validation, validationA, False)
+checkErrors(validation, validationA,False)
 
 exit()
+
