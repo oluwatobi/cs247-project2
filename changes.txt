@@ -33,9 +33,9 @@ Observations:
         -Total probable errors  1667
 
 
-===========PART 4==================
+===========PART 4(Momentum)==================
 
-Observations (with Momentum = 0.9:
+Observations :
     - Learning Rate: 0.002
         - Number of Tests: 5000
         - Total Probable Errors: 5000
@@ -57,7 +57,11 @@ Observations (with Momentum = 0.9:
     - Learning Rate: 20.0
         - Number of Tests: 5000
         - Total Probable Errors: 4618
-Comments: We tweaked the learning Rate(tried values greater than 1 and less than 2), The mometum (tried 8.0, 1.0 and 1.5) and the number of hidden layers (tried 100) and we concluded that the best learning rate we found was 1.45. 
+Comments: We tweaked the learning Rate(tried values greater than 1 and less than 2 and alsobetween 2 and 3), The mometum (tried 8.0, 1.0 and 1.5) and the number of hidden layers (tried 100) and we concluded that the best learning rate we found was 2.6 (with the lowest error rate) 
+
+
+===========PART 4(Generalization)==================
+
 
 
 
