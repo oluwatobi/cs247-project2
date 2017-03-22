@@ -86,7 +86,7 @@ Observations :
         - Test Loss: 0.092157245
         - Validation Set Loss: 0.092216231
 
-Comments: We tweaked the learning Rate(tried values greater than 1 and less than 2 and also between 2 and 3), The momentum (tried 8.0, 1.0 and 1.5) and the number of hidden layers (tried 100) and we concluded that the best learning rate we found was 1.0 (with the lowest error rate) 
+Comments: We tweaked the learning rate (tried values greater than 1 and less than 2 and also between 2 and 3), the momentum (tried 8.0, 1.0 and 1.5), and the number of hidden layers (tried 100) and we concluded that the best learning rate we found was 1.0 (with the lowest error rate) 
 
 Fine Tuning: We kept testing our learning rate and we arrived at a final value of 1.4 with 10 hidden units and 0.94 momentum
 
@@ -96,10 +96,13 @@ We added L2 regularization using the best parameters we had (10 hidden layers, l
 
 Without regularization, we got overfitting with at 30 hidden layers. There was a large deviation between the loss of the test set and that of the validation set.
 
-Without regularization, we found out best hidden layer to be 10 which is the amout we were given from the start Upon numerous test values (5,10, 15, 20, 25, 30, 35, 40,.....75) we discovered the best value to be to be 10.
+Without regularization, we found the best hidden layer to be 10 which is the amout we were given from the start Upon numerous test values (5,10, 15, 20, 25, 30, 35, 40,.....75) we discovered the best value to be to be 10.
 
-With Regularization we found the best hidden layer to be 17. We testes a bunch of values (10, 12, 15, 17, 38, 42, 47, 55) and 17 gave the best result with least amount of deviation between the loss of test and training sets, even when we tweaked the learining rate.
+With regularization we found the best hidden layer to be 17. We testes a bunch of values (10, 12, 15, 17, 38, 42, 47, 55) and 17 gave the best result with least amount of deviation between the loss of test and training sets, even when we tweaked the learining rate.
 
+===========PART 4(Generalization)==================
 
-
-
+Settings:
+   - Hidden Layers: 17
+   - Learning Rate: 1.4
+Test Data Classification Error: 0.00932
