@@ -5,6 +5,7 @@ Student2: Oluwatobi Oni-Orisan
 
 
 ===========PART 2==================
+We used a function that checked the values in the predicted set. If the value of every slot except the correct slot was less than 0.3 and the value in the correct slot was greater than 0.7 we declared that to be a "match". Else, we counted it as an error.
 
 ===========PART 3==================
 
@@ -34,7 +35,7 @@ Observations:
 
 ===========PART 4==================
 
-Observations:
+Observations (with Momentum = 0.9:
     - Learning Rate: 0.002
         - Number of Tests: 5000
         - Total Probable Errors: 5000
@@ -56,7 +57,7 @@ Observations:
     - Learning Rate: 20.0
         - Number of Tests: 5000
         - Total Probable Errors: 4618
-Comments: We tweaked the learning Rate(tried values greater than 1 and less than 2), The mometum (tried 8.0, 1.0 and 1.5) and the number of hidden layers (tried 100) and we concluded that the best learning rate we found was 1.47. 
+Comments: We tweaked the learning Rate(tried values greater than 1 and less than 2), The mometum (tried 8.0, 1.0 and 1.5) and the number of hidden layers (tried 100) and we concluded that the best learning rate we found was 1.45. 
 
 
 
