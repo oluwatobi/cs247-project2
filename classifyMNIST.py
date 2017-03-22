@@ -82,7 +82,7 @@ decoded = tf.nn.sigmoid(tf.matmul(encoded, weightsHidOut) + biasesOut)
 loss = (tf.reduce_mean(tf.square(tf.sub(y, decoded))))
 lambdaConstant = 0.000005
 
-l2reg = tf.nn.l2_loss(tf.square(weightsInHid)) + tf.reduce_sum(tf.square(weightsHidOut))
+l2reg = tf.nn.l2_loss(weightsInHid) + tf.nn.l2_loss(weightsHidOut)
 print "==================================="
 
 # loss = loss + (lambdaConstant* l2reg)
