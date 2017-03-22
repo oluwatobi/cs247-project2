@@ -13,24 +13,38 @@ Observations:
     - Learning Rate: 0.002
         - Number of Tests: 5000
         - Total Probable Errors: 5000
+        - Test Loss: 0.2632
+        - Validation Set Loss: 0.2696
     - Learning Rate: 0.01
         - Number of Tests: 5000
         - Total Probable Errors: 5000
+        - Test Loss: 0.09939
+        - Validation Set Loss: 0.0996
     - Learning Rate: 0.05
         - Number of Tests: 5000
         - Total probable errors: 4994
+        - Test Loss: 0.0868
+        - Validation Set Loss: 0.0884
     - Learning Rate: 0.2
         - Number of Tests: 5000
-        - Total probable errors: 4719
+        - Total probable errors: 4929
+        - Test Loss: 0.0752
+        - Validation Set Loss: 0.0804
     - Learning Rate: 1.0
         - Number of Tests: 5000
-        - Total probable errors: 3518
+        - Total probable errors: 3290
+        - Test Loss: 0.0372
+        - Validation Set Loss: 0.0498
     - Learning Rate: 5.0
-        -Number of Tests  5000
-        -Total probable errors  1960  
+        - Number of Tests  5000
+        - Total probable errors  1814 
+        - Test Loss: 0.0078
+        - Validation Set Loss: 0.0355
     - Learning Rate: 20.0
-        -Number of Tests  5000
-        -Total probable errors  1667
+        - Number of Tests  5000
+        - Total probable errors  1505
+        - Test Loss: 0.0039
+        - Validation Set Loss: 0.0322
 
 
 ===========PART 4(Momentum)==================
@@ -39,25 +53,39 @@ Observations :
     - Learning Rate: 0.002
         - Number of Tests: 5000
         - Total Probable Errors: 5000
+        - Test Loss: 0.090634853
+        - Validation Set Loss: 0.0924245
     - Learning Rate: 0.01
         - Number of Tests: 5000
-        - Total Probable Errors: 4878
+        - Total Probable Errors: 4952
+        - Test Loss: 0.082565799
+        - Validation Set Loss: 0.084867187
     - Learning Rate: 0.05
         - Number of Tests: 5000
-        - Total Probable Errors: 4227
+        - Total Probable Errors: 4209
+        - Test Loss: 0.04762511
+        - Validation Set Loss: 0.060104921
     - Learning Rate: 0.2
         - Number of Tests: 5000
-        - Total Probable Errors: 2716
+        - Total Probable Errors: 2295
+        - Test Loss: 0.019010777
+        - Validation Set Loss: 0.039789379
     - Learning Rate: 1.0
         - Number of Tests: 5000
-        - Total Probable Errors: 1427
+        - Total Probable Errors: 2019
+        - Test Loss: 0.0086130574
+        - Validation Set Loss: 0.036413942
     - Learning Rate: 5.0
         - Number of Tests: 5000
-        - Total Probable Errors: 2602
+        - Total Probable Errors: 2308
+        - Test Loss: 0.029293643
+        - Validation Set Loss: 0.050930604
     - Learning Rate: 20.0
         - Number of Tests: 5000
-        - Total Probable Errors: 4618
-Comments: We tweaked the learning Rate(tried values greater than 1 and less than 2 and alsobetween 2 and 3), The mometum (tried 8.0, 1.0 and 1.5) and the number of hidden layers (tried 100) and we concluded that the best learning rate we found was 2.6 (with the lowest error rate) 
+        - Total Probable Errors: 4564
+        - Test Loss: 0.092157245
+        - Validation Set Loss: 0.092216231
+Comments: We tweaked the learning Rate(tried values greater than 1 and less than 2 and also between 2 and 3), The mometum (tried 8.0, 1.0 and 1.5) and the number of hidden layers (tried 100) and we concluded that the best learning rate we found was 2.6 (with the lowest error rate) 
 
 
 ===========PART 4(Generalization)==================
