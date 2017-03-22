@@ -61,6 +61,7 @@ Comments: We tweaked the learning Rate(tried values greater than 1 and less than
 
 
 ===========PART 4(Generalization)==================
+We added L2 regularization using the best parameters we had (10 hidden layers, learning rate of 2.6 and momentum of 0.9) and it did help. The number of errors
 
 
 
