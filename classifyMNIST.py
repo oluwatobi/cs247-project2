@@ -82,7 +82,7 @@ decoded = tf.nn.sigmoid(tf.matmul(encoded, weightsHidOut) + biasesOut)
 loss = (tf.reduce_mean(tf.square(tf.sub(y, decoded))))
 lambdaConstant = 0.000005
 
-#l2reg = tf.reduce_sum(tf.square(weightsInHid)) + tf.reduce_sum(tf.square(weightsHidOut))
+l2reg = tf.nn.l2_loss(tf.square(weightsInHid)) + tf.reduce_sum(tf.square(weightsHidOut))
 print "==================================="
 
 # loss = loss + (lambdaConstant* l2reg)
@@ -160,12 +160,10 @@ for i in range(epochs):
 
 
 big_loss = sess.run(loss,feed_dict={x:points,y:pointsA})
-tlMap[learning_rate] = big_loss
 print 'Total loss', big_loss
 checkErrors(points,pointsA)
 
 valid_loss = sess.run(loss,feed_dict={x:validation,y:validationA})
-vlMap[learning_rate] = valid_loss
 print 'Validation Set Loss', valid_loss 
 checkErrors(validation, validationA,False)
 
