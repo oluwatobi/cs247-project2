@@ -56,7 +56,7 @@ Observations:
     - Learning Rate: 20.0
         - Number of Tests: 5000
         - Total Probable Errors: 4618
-
+Comments: We tweaked the learning Rate(tried values greater than 1 and less than 2), The mometum (tried 8.0, 1.0 and 1.5) and the number of hidden layers (tried 100) and we concluded that the best learning rate we found was 1.47. 
 
 
 
