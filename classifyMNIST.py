@@ -14,16 +14,16 @@ print 'Validation Set count ', mnist.validation.images.shape
 
 #the length of each input is determined by the data file
 
-training_size = 1000
+training_size = 55000
 epochs = 10000
 howOften = 500
 batch_size = 10
 
 # default hyperparameters
 
-hiddenLayerSize = 10
-learning_rate = 1.0
-momentum = 0.9
+hiddenLayerSize = 17
+learning_rate = 1.4
+momentum = 0.94
 
 print sys.argv
 
@@ -42,12 +42,12 @@ for o in range(1,len(sys.argv),2):
     elif arg in ['-b', '-batchsize']:
         batch_size = int(sys.argv[o+1])
 
-points = mnist.test.images[:training_size,:]
-pointsA = mnist.test.labels[:training_size,:]
+points = mnist.train.images
+pointsA = mnist.train.labels #Proper points labels
 
 
 validation = mnist.validation.images
-validationA = mnist.validation.labels
+validationA = mnist.validation.labels #Validation Answers
 
 inputLayerSize = len(points[0])
 outputLayerSize = 10
@@ -80,12 +80,12 @@ biasesOut = tf.Variable(tf.zeros([outputLayerSize]), name='biasesOut')
 decoded = tf.nn.sigmoid(tf.matmul(encoded, weightsHidOut) + biasesOut)
 
 loss = (tf.reduce_mean(tf.square(tf.sub(y, decoded))))
-lambdaConstant = 0.000005
-
-l2reg = tf.nn.l2_loss(weightsInHid) + tf.nn.l2_loss(weightsHidOut)
+lambdaConstant = 0.000001
+#l2reg = tf.reduce_sum(tf.square(weightsInHid)) + tf.reduce_sum(tf.square(weightsHidOut))
+l2reg = tf.nn.l2_loss(tf.square(weightsInHid)) + tf.nn.l2_loss(tf.square(weightsHidOut))
 print "==================================="
 
-# loss = loss + (lambdaConstant* l2reg)
+loss = loss + (lambdaConstant* l2reg)
 train_op = tf.train.MomentumOptimizer(learning_rate,momentum).minimize(loss)
 
 
@@ -148,8 +148,8 @@ for i in range(epochs):
         print 'epoch ',i
         big_loss = sess.run(loss,feed_dict={x:points,y:pointsA})
         valid_loss = sess.run(loss,feed_dict={x:validation,y:validationA})
-        # print 'Total loss', big_loss
-        # print 'Validation Set Loss', valid_loss 
+        #print 'Total loss', big_loss
+        #print 'Validation Set Loss', valid_loss 
         write2 = sess.run(sum2, feed_dict={x:points,y:pointsA})
         test_writer.add_summary(write2,i)
 
@@ -158,13 +158,10 @@ for i in range(epochs):
         print "Validation errors"
         checkErrors(validation, validationA)
 
-
-big_loss = sess.run(loss,feed_dict={x:points,y:pointsA})
-print 'Total loss', big_loss
+print 'Total loss', sess.run(loss,feed_dict={x:points,y:pointsA})
 checkErrors(points,pointsA)
 
-valid_loss = sess.run(loss,feed_dict={x:validation,y:validationA})
-print 'Validation Set Loss', valid_loss 
+print 'Validation Set Loss', sess.run(loss,feed_dict={x:validation,y:validationA}) 
 checkErrors(validation, validationA,False)
 
 exit()
